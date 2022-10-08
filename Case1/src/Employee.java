@@ -54,17 +54,17 @@ public class Employee {
         int wYear=2021-hireYear;
         if(wYear<10)
         {
-            double zam=salary*0.05;
+            double zam=(salary-tax()+bonus())*0.05;
            return zam;
         }
-        else if (wYear>9||wYear<20)
+        else if (wYear>9&wYear<20)
         {
-            double zam=salary*0.1;
+            double zam=(salary-tax()+bonus())*0.1;
             return zam;
         }
-        else if (2021-hireYear>19)
+        else if (wYear>19)
         {
-            double zam=salary*0.15;
+            double zam=(salary-tax()+bonus())*0.15;
             return zam;
         }
         }
@@ -75,6 +75,7 @@ public class Employee {
     {
         double total=salary-tax()+bonus();
         double toplam=salary-tax()+bonus()+raiseSalary();
+
         System.out.println("Adi:"+name);
         System.out.println("Maas:"+salary);
         System.out.println("Baslangic Yili:"+hireYear);
