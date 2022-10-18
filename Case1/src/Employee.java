@@ -3,7 +3,7 @@ public class Employee {
     double salary;
     int workHours;
     int hireYear;
-     Employee(String name,double salary,int workHours,int hireYear)
+    Employee(String name,double salary,int workHours,int hireYear)
     {
         this.name=name;
         this.salary=salary;
@@ -22,7 +22,7 @@ public class Employee {
 
         if(salary<=1000)
         {
-        return salary;
+            return salary;
         }
         else
         {
@@ -51,22 +51,40 @@ public class Employee {
         else {
 
 
-        int wYear=2021-hireYear;
-        if(wYear<10)
-        {
-            double zam=(salary-tax()+bonus())*0.05;
-           return zam;
-        }
-        else if (wYear>9&wYear<20)
-        {
-            double zam=(salary-tax()+bonus())*0.1;
-            return zam;
-        }
-        else if (wYear>19)
-        {
-            double zam=(salary-tax()+bonus())*0.15;
-            return zam;
-        }
+
+            int wYear=2021-hireYear;
+            if(wYear<10)
+            {
+                double zam=(salary)*1.05;
+                return zam-salary;
+            }
+            else if (wYear>9&wYear<20)
+            {
+                double zam=(salary)*1.1;
+                return zam-salary;
+            }
+            else if (wYear>19)
+            {
+                double zam=(salary)*1.15;
+                return zam-salary;
+            }
+
+
+            if(wYear<10)
+            {
+                double zam=(salary-tax()+bonus())*0.05;
+                return zam;
+            }
+            else if (wYear>9&wYear<20)
+            {
+                double zam=(salary-tax()+bonus())*0.1;
+                return zam;
+            }
+            else if (wYear>19)
+            {
+                double zam=(salary-tax()+bonus())*0.15;
+                return zam;
+            }
         }
         return 0;
     }
@@ -74,10 +92,10 @@ public class Employee {
     public String toString()
     {
         double total=salary-tax()+bonus();
-        double toplam=salary-tax()+bonus()+raiseSalary();
-
+        double toplam=salary+raiseSalary();
         System.out.println("Adi:"+name);
         System.out.println("Maas:"+salary);
+        System.out.println("Calisma Saati:"+workHours);
         System.out.println("Baslangic Yili:"+hireYear);
         System.out.println("Vergi:"+tax()+" TL");
         System.out.println("Bonus:"+bonus()+" TL");
