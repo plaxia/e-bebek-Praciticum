@@ -92,7 +92,7 @@ public class Employee {
     public String toString()
     {
         double total=salary-tax()+bonus();
-        double toplam=salary+raiseSalary();
+        double toplam=salary+raiseSalary()-tax()+bonus();
         System.out.println("Adi:"+name);
         System.out.println("Maas:"+salary);
         System.out.println("Calisma Saati:"+workHours);
